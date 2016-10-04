@@ -13,6 +13,7 @@ div.SecondaryRow{
 }
 .form-group{
     margin-bottom:15px ;
+    float: inherit;
 }
 html{
     height: 100%;

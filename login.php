@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html >
 <head>
-    <link href="../Libraries/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <link href="libs/bootstrap.min.css" rel="stylesheet" />
+    <link href="libs/bootstrap-theme.css" rel="stylesheet" />
 
 
-    <link href="login.css" rel="stylesheet" />
+    <link href="css/login.css" rel="stylesheet" />
 </head>
 <body>
 <div class ="container"  >

@@ -3,6 +3,6 @@
 <head>
 </head>
 <body>
-    <a href="../Login/login.php">Login</a>
+    <a href="login.php">Login</a>
 </body>
 </html>
