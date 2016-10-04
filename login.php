@@ -7,6 +7,7 @@
     <title>Login</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
     <link href="css/login.css" rel="stylesheet">
 </head>
 
@@ -18,16 +19,10 @@
             <div class="col-sm-4" >
                 <form class="form-inline">
                     <div class="form-group">
-                        <div class="labelDiv">
-                            <label for="loginInput">Login</label>
-                         </div>
-                    <input type="text" class="form-control" id="loginInput" placeholder="Login">
+                        <input type="text" class="inputs" id="loginInput" placeholder="Login">
                     </div>
                     <div class="form-group">
-                        <div class="labelDiv">
-                            <label for="passwordInput">Password</label>
-                        </div>
-                        <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                        <input type="password" class="inputs" id="passwordInput" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-default">Sign in</button>
                 </form>
