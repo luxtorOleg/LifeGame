@@ -1,19 +1,12 @@
-div.MainRow{
-    height:100%;
-}
-div.SecondaryRow{
-    height:100%;
-}
-.col-md-4{
-    height:100%;
-}
 .labelDiv{
     width:70px;
     float: left;
+    margin-bottom: -10px;
 }
 .form-group{
     margin-bottom:15px ;
     float: inherit;
+    padding: 10px;
 }
 html{
     height: 100%;
@@ -21,18 +14,16 @@ html{
 body{
     height: 100%;
 }
+
 .container{
     height: 100%;
 }
 .form-inline {
-
     margin-top: 30px;
     padding: 10px;
 
 }
 .btn {
-    margin-left: 60%;
-}
-.col-md-12{
-    height:100%;
+   width: 100%;
+    padding: 5px;
 }
