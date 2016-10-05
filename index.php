@@ -7,18 +7,23 @@
     <title>LifeGame</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <link href="css/login.css" rel="stylesheet">
+    <link href="css/registration.css" rel="stylesheet">
 </head>
 
-<body>
-<?php
-    include ("template/header.php");
+    <body>
+    <?php
+        include ("template/header.php");
+        include ("login.php");
+        include ("registration.php");
+    ?>
 
-?>
-<?php
-    include ("template/footer.php");
-?>
+    <?php
+        include ("template/footer.php");
+    ?>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

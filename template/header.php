@@ -12,8 +12,8 @@
         <div class="collapse navbar-collapse" id="myNavbar" >
             <ul class="nav navbar-nav navbar-right" style="max-width: 100%;"  >
                     <form class="navbar-form" >
-                        <a href="registration.php" class="btn btn-success" role="button">Registration</a>
-                        <a href="login.php" class="btn btn-success" role="button">Sign In</a>
+                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#RegistModal">Registration</button>
+                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#LoginModal">Sign In</button>
                     </form>
             </ul>
         </div>
