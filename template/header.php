@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="myNavbar" >
             <ul class="nav navbar-nav navbar-right" style="max-width: 100%;"  >
                     <form class="navbar-form" >
-                        <a href="login.php" class="btn btn-success" role="button">Registration</a>
+                        <a href="registration.php" class="btn btn-success" role="button">Registration</a>
                         <a href="login.php" class="btn btn-success" role="button">Sign In</a>
                     </form>
             </ul>
