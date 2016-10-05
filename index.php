@@ -11,8 +11,11 @@
 
 <body>
 <?php
-    include ("header.php");
-    include ("footer.php");
+    include ("template/header.php");
+
+?>
+<?php
+    include ("template/footer.php");
 ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
