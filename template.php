@@ -10,7 +10,14 @@
   </head>
   
   <body>
+    <?php
+      include ("header.php");
+
+    ?>
   	<h1>Text here</h1>
+    <?php
+      include ("footer.php");
+    ?>
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
