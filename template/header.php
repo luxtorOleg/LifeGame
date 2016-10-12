@@ -1,7 +1,8 @@
 <?php
- echo '<nav class="navbar navbar-default navbar-fixed-top">
+ echo '<nav class="navbar navbar-default navbar-absolute-top" >
     <div class="container-fluid">
         <div class="navbar-header">
+        <img src="template/emblem.png" class="img-circle navbar-brand" alt="Cinque Terre" width="50" height="50">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>

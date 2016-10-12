@@ -1,5 +1,5 @@
 <?php
 echo '<div class="panel-footer navbar-fixed-bottom" align="center" style="border-top: 1px solid darkgray">
-    Footer
+    All rights reserved &#169 LG
 </div>';
 ?>

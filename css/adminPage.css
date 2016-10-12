@@ -1,0 +1,22 @@
+.childrenContent{
+    border-radius: 10px;
+    background: whitesmoke;
+    padding: 1%;
+}
+.viewButton{
+    float: right;
+}
+.img-rounded{
+    height: 60px;
+    width: 100%;
+}
+
+.media-body{
+    padding-top: 3%;
+}
+.media-heading{
+    float: left;
+}
+.childrenInfoDiv{
+    float: left;
+}
