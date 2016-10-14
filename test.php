@@ -19,8 +19,9 @@
 		app.controller('myCtrl', function($scope, $http) {
 		    $scope.myFunction = function() {
 		           $http({
-					    url: "/api.php",
+					    url: "api.php",
 					    method: "POST",
+
 					    data: JSON.stringify({"login":"test", "password":"asd", "service":"login"})
 					}).success(function (data, status, headers, config) {
 					    

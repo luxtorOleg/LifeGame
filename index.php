@@ -8,11 +8,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 
+
     <link href="css/login.css" rel="stylesheet">
     <link href="css/registration.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/registration.js"></script>
+
 </head>
 
-    <body>
+    <body ng-app="myAppRegistration" ng-controller="myCtrlRegistration">
     <?php
         include ("template/header.php");
         include ("login.php");

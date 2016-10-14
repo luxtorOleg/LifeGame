@@ -1,56 +1,81 @@
 <?php
 
-if($_SERVER['REQUEST_METHOD'] == "POST")
-{
-	$postdata = file_get_contents("php://input");
-	$data = json_decode($postdata, true);
-
-	if(isset($data["service"]))
+	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
-		$link = mysql_connect('127.0.0.1', 'root', 'root')
-		    or die('Can not connect to DB: ' . mysql_error());
-		mysql_select_db('life_game') or die('Can not select DB');
+		$postdata = file_get_contents("php://input");
+		$data = json_decode($postdata, true);
 
-		$service = $data["service"];
+		if(isset($data["service"]))
+		{
+			require_once "config.php";
+			$pdo = new PDO("mysql:dbname=$_DBNAME;host=$_MYSQLSERVER", $_USERMYSQL, $_PWMYSQL);
 
-		switch ($service) {
-			case 'login':
-				login($data);
-				break;
-			
-			default:
-				# code...
-				break;
+			$service = $data["service"];
+
+			switch ($service) {
+				case 'login':
+					login($data,$pdo);
+					break;
+				case 'registration':
+					registration($data,$pdo);
+					break;
+				default:
+					# code...
+					break;
+			}
+
+			$pdo=null;
 		}
-
-		mysql_close($link);
 	}
-}
 
-function login($data)
-{
-	if($data["login"] && $data["password"])
+	function registration($data, $pdoConn)
 	{
 		$login = $data["login"];
+		$name = $data["name"];
+		$surname = $data["surname"];
+		$email = $data["email"];
 		$password = $data["password"];
 
-		$query = "SELECT * FROM users WHERE login='$login'";
-		$result = mysql_query($query) or die('Wrong query: ' . mysql_error());
+		$ar = array($data["login"], $data["name"], $data["surname"], $data["email"], $data["password"]);
 
-		$jsonData = array();
-		while ($array = mysql_fetch_row($result)) {
-		    $jsonData[] = $array;
+		foreach($ar as $a){
+			echo $a;
 		}
-		echo json_encode($jsonData);
+		$st = $pdoConn->prepare("INSERT INTO users (login,password,name,surname,email) VALUES  (:Login,:Password,:Name,:Surname,:EMail)");
 
-		mysql_free_result($result);
+		$st->bindParam(":Login", $login, PDO::PARAM_STR);
+		$st->bindParam(":Name", $name, PDO::PARAM_STR);
+		$st->bindParam(":Surname", $surname, PDO::PARAM_STR);
+		$st->bindParam(":EMail", $email, PDO::PARAM_STR);
+		$st->bindParam(":Password", $password, PDO::PARAM_STR);
+
+		$st->execute();
+		print_r($st->errorInfo());
 	}
-	else
+	function login($data, $pdoConn)
 	{
-		echo "Wrong data";
+		if($data["login"] && $data["password"])
+		{
+			$login = $data["login"];
+			$password = $data["password"];
+
+			$query = "SELECT * FROM users WHERE login='$login'";
+
+
+			$jsonData = array();
+			foreach ($pdoConn->query($query) as $row) {
+				$jsonData[] = $row;
+			}
+			echo json_encode($jsonData);
+
+		}
+		else
+		{
+			echo "Wrong data";
+		}
+
+		return;
 	}
 
-	return;
-}
 
 ?>

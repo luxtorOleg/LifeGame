@@ -1,16 +1,15 @@
 <?php
-echo  '<div id="RegistModal" class="modal fade" role="dialog" >
+echo  '<div id="RegistModal"  class="modal fade" role="dialog" >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <form class="form-group registrationForm" action="registrationBackEnd.php" method="post">
-                                <input name="userName" type="text" class="form-control registrationInput" placeholder="Name" >
-                                <input name="userSurmale" type="text" class="form-control registrationInput" placeholder="Surname">
-                                <input name="userFatherName" type="text" class="form-control registrationInput" placeholder="FatherName">
-                                <input name="usePhone" type="tel" class="form-control registrationInput" placeholder="Phone">
-                                <input name="userEmail" type="email" class="form-control registrationInput" placeholder="E-mail" >
-                                <input name="usePassword" type="password" class="form-control registrationInput" placeholder="Password" >
+                                <input name="userLogin" type="text" class="form-control registrationInput" ng-model="login" placeholder="Login" >
+                                <input name="userName" type="text" class="form-control registrationInput"  ng-model="name" placeholder="Name">
+                                <input name="userSurname" type="text" class="form-control registrationInput"  ng-model="surname" placeholder="Surname">
+                                <input name="userEmail" type="email" class="form-control registrationInput"  ng-model="email" placeholder="E-mail" >
+                                <input name="userPassword" type="password" class="form-control registrationInput"  ng-model="password" placeholder="Password" >
                             </form>
                             <div class="checkbox">
                                 <label class="AgreeConditionsCheckbox">
@@ -18,7 +17,7 @@ echo  '<div id="RegistModal" class="modal fade" role="dialog" >
                                     I agree to the terms and conditions
                                 </label>
                             </div>
-                                 <button type="submit" class="btn btn-primary btn-block" >OK</button>
+                                 <button type="submit" ng-click="myFunction()" class="btn btn-primary btn-block" >OK</button>
                      </div>
                 </div>
             </div>
