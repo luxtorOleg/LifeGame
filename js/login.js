@@ -1,1 +1,12 @@
-Read me
+var app = angular.module('myAppLogin', []);
+app.controller('myCtrlLogin', function($scope, $http) {
+    $scope.myFunction = function() {
+        $http({
+            url: "api.php",
+            method: "POST",
+            data: JSON.stringify({"login":$scope.login, "password":$scope.password, "service":"login"})
+        }).success(function (data, status, headers, config) {
+
+        })
+    }
+});

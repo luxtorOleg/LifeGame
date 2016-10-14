@@ -13,11 +13,12 @@
     <link href="css/registration.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/registration.js"></script>
 
 </head>
 
-    <body ng-app="myAppRegistration" ng-controller="myCtrlRegistration">
+    <body >
     <?php
         include ("template/header.php");
         include ("login.php");

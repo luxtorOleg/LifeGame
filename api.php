@@ -4,7 +4,6 @@
 	{
 		$postdata = file_get_contents("php://input");
 		$data = json_decode($postdata, true);
-
 		if(isset($data["service"]))
 		{
 			require_once "config.php";
@@ -38,9 +37,6 @@
 
 		$ar = array($data["login"], $data["name"], $data["surname"], $data["email"], $data["password"]);
 
-		foreach($ar as $a){
-			echo $a;
-		}
 		$st = $pdoConn->prepare("INSERT INTO users (login,password,name,surname,email) VALUES  (:Login,:Password,:Name,:Surname,:EMail)");
 
 		$st->bindParam(":Login", $login, PDO::PARAM_STR);
@@ -59,13 +55,19 @@
 			$login = $data["login"];
 			$password = $data["password"];
 
-			$query = "SELECT * FROM users WHERE login='$login'";
+			$query = "SELECT id,login,name,surname,email FROM users WHERE login='$login' and password='$password'";
 
 
 			$jsonData = array();
 			foreach ($pdoConn->query($query) as $row) {
-				$jsonData[] = $row;
+					 $jsonData[] = array(
+						 "login"=>$row["login"],
+						 "name"=>$row["name"],
+						 "surname"=>$row["surname"],
+						 "email"=>$row["email"]
+					 );
 			}
+
 			echo json_encode($jsonData);
 
 		}
