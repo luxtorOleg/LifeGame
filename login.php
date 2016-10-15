@@ -11,7 +11,7 @@ echo '<div  ng-controller="LoginCtrl" id="LoginModal" class="modal fade" role="d
                             <div class="form-group">
                                 <input type="password" class="inputs" id="passwordInput" ng-model="password" placeholder="Password">
                             </div>
-                            <button type="submit"  ng-click="myFunction()" class="btn btn-default btnSing">Sign in</button>
+                            <button type="submit"  ng-click="loginFunction()" class="btn btn-default btnSing">Sign in</button>
                              <h3><span style="margin-left:42%; " id="successLabel" class="label label-danger">{{error}}</span></h3>
                         </form>
                     </div>
