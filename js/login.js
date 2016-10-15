@@ -6,8 +6,9 @@ app.controller('myCtrlLogin', function($scope, $http) {
             method: "POST",
             data: JSON.stringify({"login":$scope.login, "password":$scope.password, "service":"login"})
         }).success(function (data, status, headers, config) {
-            if(data[0] != null) {
-                $scope.success = "success";
+
+            if(data[0] != null && data != "Wrong data") {
+                $scope.error = "";
                 window.location = "adminPage.php";
             }
             else{

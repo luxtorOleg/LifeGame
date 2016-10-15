@@ -10,7 +10,6 @@ app.controller('myCtrlRegistration', function($scope, $http) {
                 $scope.success = "success";
                document.getElementById("registrationForm").remove();
                 document.getElementById("registrationOkBtn").disabled = true;
-
             }
             else{
                 $scope.error = "error";
