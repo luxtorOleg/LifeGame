@@ -7,13 +7,13 @@ app.controller('myCtrlRegistration', function($scope, $http) {
             data: JSON.stringify({"login":$scope.login,"name":$scope.name,"surname":$scope.surname,"email":$scope.email, "password":$scope.password, "service":"registration"})
         }).success(function (data, status, headers, config) {
             if(data.indexOf("[0] => 00000") !== -1) {
-                $scope.success = "Success";
+                $scope.success = "success";
                document.getElementById("registrationForm").remove();
                 document.getElementById("registrationOkBtn").disabled = true;
 
             }
             else{
-                $scope.success = "Error";
+                $scope.error = "error";
             }
         })
     }

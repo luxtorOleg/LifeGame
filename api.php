@@ -1,5 +1,4 @@
 <?php
-
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		$postdata = file_get_contents("php://input");
@@ -67,9 +66,7 @@
 						 "email"=>$row["email"]
 					 );
 			}
-
 			echo json_encode($jsonData);
-
 		}
 		else
 		{
