@@ -59,7 +59,7 @@
 
 			$jsonData = array();
 			foreach ($pdoConn->query($query) as $row) {
-					 $jsonData[] = array(
+					 $jsonData = array(
 						 "id"=>$row["id"],
 						 "login"=>$row["login"],
 						 "name"=>$row["name"],

@@ -1,5 +1,5 @@
 <?php
-echo '<div ng-app="myAppLogin" ng-controller="myCtrlLogin" id="LoginModal" class="modal fade" role="dialog" >
+echo '<div  ng-controller="LoginCtrl" id="LoginModal" class="modal fade" role="dialog" >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
