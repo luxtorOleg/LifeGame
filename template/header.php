@@ -9,15 +9,29 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">LifeGame</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar" >
-            <ul class="nav navbar-nav navbar-right" style="max-width: 100%;"  >
-                    <form class="navbar-form" >
-                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#RegistModal">Registration</button>
-                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#LoginModal">Sign In</button>
-                    </form>
-            </ul>
-        </div>
-    </div>
-</nav>'
+        </div>';
+if(!isset($_SESSION['user_id']))
+{
+    echo   '<div class="collapse navbar-collapse" id="myNavbar" >
+                <ul class="nav navbar-nav navbar-right" style="max-width: 100%;"  >
+                        <form class="navbar-form" >
+                            <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#RegistModal">Registration</button>
+                            <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#LoginModal">Sign In</button>
+                        </form>
+                </ul>
+            </div>';
+}
+else
+{
+    echo   '<div class="collapse navbar-collapse" id="myNavbar" >
+                <ul class="nav navbar-nav navbar-right" style="max-width: 100%;"  >
+                        <form class="navbar-form" >
+                            <button type="button" class="btn btn-success" data-toggle="modal">Logout</button>
+                        </form>
+                </ul>
+            </div>';
+}
+ 
+echo '</div>
+</nav>';
 ?>
