@@ -18,23 +18,25 @@ app.controller('RegistrationCtrl', function($scope, $http) {
     }
 });
 app.controller('LoginCtrl', function($scope, $http) {
+    $scope.disableInputs = false;
     $scope.loginFunction = function() {
-        var loginInput = document.getElementById("loginInput").disabled = true;
-        var passwordInput = document.getElementById("passwordInput").disabled = true;
+        $scope.disableInputs = true;
+
         $http({
             url: "api.php",
             method: "POST",
             data: JSON.stringify({"login":$scope.login, "password":$scope.password, "service":"login"})
         }).success(function (data, status, headers, config) {
+            $scope.disableInputs = false;
 
-            if(data["login"] == $scope.login) {
+            if(data["login"] == $scope.login){
                 window.location = "adminPage.php";
             }
             else{
-                loginInput = document.getElementById("loginInput").disabled = false;
-                passwordInput = document.getElementById("passwordInput").disabled = false;
                 $scope.error = "error";
             }
-        })
+        }).error(function (data, status){
+             $scope.disableInputs = false;
+        });
     }
 });
