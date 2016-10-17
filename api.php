@@ -1,4 +1,8 @@
 <?php
+	if (session_status() == PHP_SESSION_NONE) {
+	    session_start();
+	}
+	
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		$postdata = file_get_contents("php://input");
@@ -67,6 +71,12 @@
 						 "email"=>$row["email"]
 					 );
 			}
+
+			if(!empty($jsonData) && session_status() != PHP_SESSION_NONE)
+			{
+				 $_SESSION['user_id'] = $jsonData['id'];
+			}
+
 			echo json_encode($jsonData);
 		}
 		else
