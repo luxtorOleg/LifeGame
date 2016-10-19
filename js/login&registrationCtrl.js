@@ -8,6 +8,7 @@ app.controller('RegistrationCtrl', function($scope, $http) {
         }).success(function (data, status, headers, config) {
             if(data.indexOf("[0] => 00000") !== -1) {
                 $scope.success = "success";
+                $scope.error = "";
                document.getElementById("registrationForm").remove();
                 document.getElementById("registrationOkBtn").disabled = true;
             }
@@ -39,4 +40,18 @@ app.controller('LoginCtrl', function($scope, $http) {
              $scope.disableInputs = false;
         });
     }
+});
+app.controller('LogoutCtrl',function($scope,$http)
+{
+    $scope.logoutFunction = function(){
+        $http({
+            url: "api.php",
+            method: "POST",
+            data: JSON.stringify({"service":"logout"})
+        }).success(function (data, status, headers, config) {
+            window.location = "index.php";
+        }).error(function (data, status){
+            
+        });
+}
 });

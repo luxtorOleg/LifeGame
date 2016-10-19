@@ -13,9 +13,11 @@ if (session_status() == PHP_SESSION_NONE) {
     <link href="css/adminPage.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/login&registrationCtrl.js"></script>
 </head>
 
-<body>
+<body ng-app="myApp">
 <?php
 include ("template/header.php");
 ?>
@@ -42,7 +44,7 @@ include ("template/header.php");
     <div class="row" style="margin-top:20%; height:30%;">
         <div class="col-sm-5"></div>
         <div class="col-sm-2" style="height: auto">
-            <button type="button" class="btn btn-primary " style="height: 100%; width: 100%;"><span class="glyphicon glyphicon-plus"></span> Add</button>
+            <button type="button" class="btn btn-primary " style="height: 100%; width: 100%;">+Add</button>
         </div>
         <div class="col-sm-5"></div>
     </div>

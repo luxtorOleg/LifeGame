@@ -23,10 +23,10 @@ if(!isset($_SESSION['user_id']))
 }
 else
 {
-    echo   '<div class="collapse navbar-collapse" id="myNavbar" >
+    echo   '<div class="collapse navbar-collapse" ng-controller="LogoutCtrl" id="myNavbar" >
                 <ul class="nav navbar-nav navbar-right" style="max-width: 100%;"  >
                         <form class="navbar-form" >
-                            <button type="button" class="btn btn-success" data-toggle="modal">Logout</button>
+                            <button type="button" class="btn btn-success"  ng-click="logoutFunction()" data-toggle="modal">Logout</button>
                         </form>
                 </ul>
             </div>';

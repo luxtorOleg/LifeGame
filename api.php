@@ -21,6 +21,9 @@
 				case 'registration':
 					registration($data,$pdo);
 					break;
+				case 'logout':
+					logout();
+					break;
 				default:
 					# code...
 					break;
@@ -86,6 +89,9 @@
 
 		return;
 	}
-
+	function logout(){
+		session_unset();
+		session_destroy();
+	}
 
 ?>
