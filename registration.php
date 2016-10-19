@@ -14,6 +14,7 @@ echo  '<div ng-controller="RegistrationCtrl" id="RegistModal"  class="modal fade
                             <div class="checkbox">
                             </div>
                                  <h3><span style="margin-left:42%; " id="successLabel" class="label label-success">{{success}}</span></h3>
+                                 <h3><span style="margin-left:42%; " id="errorLabel" class="label label-danger">{{error}}</span></h3>
                                  <button type="submit" ng-click="registrationFunction()" id="registrationOkBtn" class="btn btn-primary btn-block" >OK</button>
 
                      </div>
